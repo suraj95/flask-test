@@ -1,0 +1,35 @@
+<HTML>
+<title>Flask Inventory Management System</title>
+<h1>Products Table</h1>
+<BODY bgcolor="mediumslateblue">
+	<table>
+    <thead>
+    <tr>
+        <th>Product ID</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in value %} 
+            <tr>
+                <td>{{row[0]}}</td>
+            </tr>
+        {% endfor %} 
+    </tbody>
+    <button id="Home" class="float-left submit-button" >Home</button>
+    <button id="myProducts" class="float-left submit-button" >Products</button>
+    <button id="myLocations" class="float-left submit-button" >Locations</button>
+    <script type="text/javascript">
+    document.getElementById("myLocations").onclick = function () {
+        location.href = "http://127.0.0.1:5000/";
+    };
+    document.getElementById("myProducts").onclick = function () {
+        location.href = "http://127.0.0.1:5000/Products";
+    };
+    document.getElementById("myLocations").onclick = function () {
+        location.href = "http://127.0.0.1:5000/Locations";
+    };
+</script>
+    
+</table>
+</BODY>
+</HTML>
