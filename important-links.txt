@@ -1,0 +1,10 @@
+Important Links
+
+https://flask.palletsprojects.com/en/1.0.x/tutorial/database/
+
+https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
+
+https://realpython.com/flask-by-example-part-1-project-setup/
+
+https://www.codementor.io/@adityamalviya/python-flask-mysql-connection-rxblpje73
+
