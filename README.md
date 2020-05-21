@@ -8,9 +8,9 @@ This repository contains the code I wrote for the Flask-test by Frappe.io. The g
 
 # Inventory Management Web Application
 
-The goal is to create a web application using Flask framework to manage inventory of a list of products in respective warehouses. Imaging this application will be used in a shop or a warehouse that needs to keep track of various products and various locations
+The goal is to create a web application using Flask framework to manage inventory of a list of products in respective warehouses. Imagine this application will be used in a shop or a warehouse that needs to keep track of various products and various locations. In order to connect our web app to the mysql database, we need a connector. Note that there are lots of Mysql connectors out there (mysqldb, pymysql)but most of them are deprecated and/or have shoddy documentation. Even after using the official mysql-connector from the site, I was getting an error because the default authorization plugin (to encrypt/decrypt passwords) is caching_sha2_password which is no longer supported. I eventually solved it by downloading my-sql-connector-python using pip. 
 
-The application should covers the following functionalities:
+The application covers the following functionalities:
 
 ## Database Tables:
 
@@ -34,6 +34,8 @@ Note: Any one, or both of from_location and to_location can be filled. If we wan
 - Create 3/4 Locations
 - Make 20 ProductMovements
 - Get product balance in each Location in a grid view, with 3 columns: Product, Warehouse, Qty
+
+
 
 
 
