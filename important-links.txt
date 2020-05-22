@@ -1,10 +1,17 @@
 Important Links
 
-https://flask.palletsprojects.com/en/1.0.x/tutorial/database/
+1. Flask Documentation to connect to a database
+- https://flask.palletsprojects.com/en/1.0.x/tutorial/database/
 
-https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
+2. Creating-a-web-app-from-scratch
+- https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
 
-https://realpython.com/flask-by-example-part-1-project-setup/
+3. Flask by Example 
+- https://realpython.com/flask-by-example-part-1-project-setup/
 
-https://www.codementor.io/@adityamalviya/python-flask-mysql-connection-rxblpje73
+4. Flask MySQL Connection
+- https://www.codementor.io/@adityamalviya/python-flask-mysql-connection-rxblpje73
+
+5. Python Virtual Environments
+- https://realpython.com/python-virtual-environments-a-primer/
 
