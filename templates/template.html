@@ -1,10 +1,9 @@
 <HTML>
 <title>Flask Inventory Management System</title>
 <Body bgcolor="mediumslateblue">
-	<table>
+	<table border=1>
     <thead>
     <tr>
-        <!-- <title>{% block title %}{% endblock %} - Flaskr</title> -->
         <th>{{my_string}}</th>
     </tr>
     </thead>
@@ -15,9 +14,15 @@
             </tr>
         {% endfor %} 
     </tbody>
-    <button id="Home" class="float-left submit-button" >Home</button>
-    <button id="myProducts" class="float-left submit-button" >Products</button>
-    <button id="myLocations" class="float-left submit-button" >Locations</button>
+    <form action="http://127.0.0.1:5000/home">
+        <input type="submit" value="Go to Home" /> 
+    </form>
+    <form action="http://127.0.0.1:5000/products">
+    <input type="submit" value="Go to Products" />
+    </form>
+    <form action="http://127.0.0.1:5000/locations">
+    <input type="submit" value="Go to Locations" />
+    </form>
     <script type="text/javascript" src="javascript-file.js"></script>
     </table>
 </Body>

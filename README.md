@@ -35,7 +35,13 @@ Note: Any one, or both of from_location and to_location can be filled. If we wan
 - Make 20 ProductMovements
 - Get product balance in each Location in a grid view, with 3 columns: Product, Warehouse, Qty
 
+# Application Screenshots:
 
+The home screen displays contents of the ProductMovement Table, while products and locations display contents of the Product and Location Tables in MySQL.
+
+![alt text](./images/home.png)
+![alt text](./images/products.png)
+![alt text](./images/locations.png)
 
 
 

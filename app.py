@@ -17,23 +17,19 @@ cursor = connection.cursor()
 def home():
 	cursor.execute("SELECT * from `Inventory`.`tbl_product_movement`;")
 	data = cursor.fetchall() #data from database
-	return render_template("template.html", my_string="Product Movement Table", value=data)
+	return render_template("template.html", my_string="Product Movement ID", value=data)
 
 @app.route('/products')
 def products():
 	cursor.execute("SELECT * from `Inventory`.`tbl_product`;")
 	data = cursor.fetchall() #data from database
-	return render_template("template.html", my_string="Product Table", value=data)
+	return render_template("template.html", my_string="Product ID", value=data)
 
 @app.route('/locations')
 def locations():
 	cursor.execute("SELECT * from `Inventory`.`tbl_location`;")
 	data = cursor.fetchall() #data from database
-	return render_template("template.html", my_string="Location Table", value=data)
-
-@app.route('/js/<path:path>')
-def send_js(path): 
-	return send_from_directory('js', path)
+	return render_template("template.html", my_string="Location ID", value=data)
 
 @app.errorhandler(404)
 def not_found(error):

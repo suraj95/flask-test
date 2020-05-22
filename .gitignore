@@ -1,0 +1,8 @@
+
+# Ignore the virtual environment (site packages, dependencies, frameworks)
+
+/env
+
+# Ignore stored procedures (still experimenting with them)
+
+sp*
