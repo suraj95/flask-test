@@ -1,14 +1,16 @@
 # Login to MySQL
 	
-	mysql -u <username> -p <password>
+	$ mysql -u <username> -p
+	$ Enter password: <password>
+	
+# MySQL Monitor started. Now enter the following statements:
 
-
-# Create our Database
+# Create our Database 
 
 	CREATE DATABASE Inventory;
 
 
-# Create Database Tables
+# Create Database Tables (Enter following)
 
 	CREATE TABLE `Inventory`.`tbl_product` (
 		`product_id` BIGINT UNIQUE AUTO_INCREMENT,
