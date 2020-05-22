@@ -37,7 +37,7 @@ Note: Any one, or both of from_location and to_location can be filled. If we wan
 
 # Application Screenshots:
 
-The home screen displays contents of the ProductMovement Table, while products and locations display contents of the Product and Location Tables in MySQL.
+I have created 4 products with product_id 1 to 4, and 4 locations with location_id 1 to 4. This is followed by 20 Product Movements with movement_id 1 to 20. For more details, refer the file mysql.txt. The home screen displays contents of the ProductMovement Table, while products and locations display contents of the Product and Location Tables in MySQL.
 
 ![alt text](./images/home.png)
 ![alt text](./images/products.png)
