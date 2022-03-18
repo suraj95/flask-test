@@ -15,3 +15,6 @@ Important Links
 5. Python Virtual Environments
 - https://realpython.com/python-virtual-environments-a-primer/
 
+6. Flask and SQLlite
+
+- https://www.digitalocean.com/community/tutorials/how-to-use-an-sqlite-database-in-a-flask-application

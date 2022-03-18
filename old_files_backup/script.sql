@@ -1,0 +1,182 @@
+
+
+# Create our Database 
+
+CREATE DATABASE Inventory;
+
+# Create Database Tables (Enter following)
+
+CREATE TABLE `Inventory`.`tbl_product` (
+	`product_id` BIGINT UNIQUE AUTO_INCREMENT,
+PRIMARY KEY (`product_id`));
+
+CREATE TABLE `Inventory`.`tbl_location` (
+	`location_id` BIGINT UNIQUE AUTO_INCREMENT,
+PRIMARY KEY (`location_id`));
+
+CREATE TABLE `Inventory`.`tbl_product_movement` (
+	`movement_id` BIGINT UNIQUE AUTO_INCREMENT,
+  	`timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  	`from_location` BIGINT,
+  	`to_location` BIGINT,
+  	`product_id` BIGINT,
+  	`qty` INT NULL,
+PRIMARY KEY (`movement_id`));
+
+# Join Database Tables
+
+#1. Join on Product and ProductMovement 
+
+SELECT * FROM `Inventory`.`tbl_product` p JOIN `Inventory`.`tbl_product_movement` pm 
+ON p.product_id=pm.product_id;
+
+#2. Join on Location and ProductMovement (From Location)
+
+SELECT * FROM `Inventory`.`tbl_location` l JOIN `Inventory`.`tbl_product_movement` pm 
+ON l.location_id=pm.from_location;
+
+#3. Join on Location and ProductMovement (To Location)
+
+SELECT * FROM `Inventory`.`tbl_location` l JOIN `Inventory`.`tbl_product_movement` pm 
+ON l.location_id=pm.to_location;
+
+
+# Create 4 Products
+
+INSERT INTO `Inventory`.`tbl_product` VALUES (1);
+INSERT INTO `Inventory`.`tbl_product` VALUES (2);
+INSERT INTO `Inventory`.`tbl_product` VALUES (3);
+INSERT INTO `Inventory`.`tbl_product` VALUES (4);
+
+
+# Create 4 Locations
+
+INSERT INTO `Inventory`.`tbl_location` VALUES (1);
+INSERT INTO `Inventory`.`tbl_location` VALUES (2);
+INSERT INTO `Inventory`.`tbl_location` VALUES (3);
+INSERT INTO `Inventory`.`tbl_location` VALUES (4);
+
+
+# Make 20 ProductMovements
+
+# 1. Move Product 1 to Location 1 (100 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (1, CURRENT_TIMESTAMP, NULL, 1, 1, 100);
+
+# 2. Move Product 2 to Location 2 (100 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (2, CURRENT_TIMESTAMP, NULL, 2, 2, 100);
+
+# 3. Move Product 3 to Location 3 (100 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (3, CURRENT_TIMESTAMP, NULL, 3, 3, 100);
+
+# 4. Move Product 4 to Location 4 (100 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (4, CURRENT_TIMESTAMP, NULL, 4, 4, 100);
+
+# 5. Move Product 1 from Location 1 to Location 2 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (5, CURRENT_TIMESTAMP, 1, 2, 1, 20);
+
+# 6. Move Product 1 from location 2 to location 3 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (6, CURRENT_TIMESTAMP, 2, 3, 1, 20);
+
+# 7. Move Product 1 from Location 3 to Location 4 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (7, CURRENT_TIMESTAMP, 3, 4, 1, 20);
+
+# 8. Move Product 1 from Location 4 to Location 1 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (8, CURRENT_TIMESTAMP, 4, 1, 1, 20);
+
+---[20 units of Product 1 have completed 1 rotation]---
+
+# 9. Move Product 2 from Location 2 to Location 3 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (9, CURRENT_TIMESTAMP, 2, 3, 2, 20);
+
+# 10. Move Product 2 from Location 3 to Location 4 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (10, CURRENT_TIMESTAMP, 3, 4, 2, 20);
+
+# 11. Move Product 2 from Location 4 to Location 1 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (11, CURRENT_TIMESTAMP, 4, 1, 2, 20);
+
+# 12. Move Product 2 from Location 1 to Location 2 (20 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (12, CURRENT_TIMESTAMP, 1, 2, 2, 20);
+
+---[20 units of Product 2 have completed 1 rotation]---
+
+# 13. Move Product 3 from Location 3 to Location 4 (30 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (13, CURRENT_TIMESTAMP, 3, 4, 1, 20);
+
+# 14. Move Product 3 from Location 3 to Location 2 (30 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (14, CURRENT_TIMESTAMP, 3, 2, 3, 20);
+
+# 15. Move Product 3 from Location 3 to Location 1 (40 units)
+	
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (15, CURRENT_TIMESTAMP, 3, 1, 3, 20);
+
+	---[Now Product 3 is finished at Location 3]---
+
+# 16. Move Product 4 from Location 4 to Location 3 (30 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (16, CURRENT_TIMESTAMP, 4, 3, 4, 20);
+
+# 17.  Move Product 4 from Location 4 to Location 2 (30 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (17, CURRENT_TIMESTAMP, 4, 2, 4, 20);
+
+# 18.  Move Product 4 from Location 4 to Location 1 (40 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (18, CURRENT_TIMESTAMP, 4, 1, 4, 20);
+
+	---[Now Product 4 is finished at Location 4]---
+
+# 19.  Move Product 4 from Location 2 to Location 1 (10 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (19, CURRENT_TIMESTAMP, 3, 4, 1, 20);
+
+# 20.  Move Product 3 from Location 1 to Location 2 (10 units)
+
+INSERT INTO `Inventory`.`tbl_product_movement` 
+VALUES (20, CURRENT_TIMESTAMP, 1, 2, 1, 20);
+
+
+-- # View our Database
+
+-- SELECT * from `Inventory`.`tbl_product`;
+-- SELECT * from `Inventory`.`tbl_location`;
+-- SELECT * from `Inventory`.`tbl_product_movement`;
+
+
+-- # Delete our Database
+
+-- DROP DATABASE `Inventory`;
+
+

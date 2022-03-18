@@ -20,14 +20,14 @@
 		`location_id` BIGINT UNIQUE AUTO_INCREMENT,
   	PRIMARY KEY (`location_id`));
 
-CREATE TABLE `Inventory`.`tbl_product_movement` (
-	`movement_id` BIGINT UNIQUE AUTO_INCREMENT,
-  	`timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  	`from_location` BIGINT,
-  	`to_location` BIGINT,
-  	`product_id` BIGINT,
-  	`qty` INT NULL,
-  PRIMARY KEY (`movement_id`));
+	CREATE TABLE `Inventory`.`tbl_product_movement` (
+		`movement_id` BIGINT UNIQUE AUTO_INCREMENT,
+  		`timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  		`from_location` BIGINT,
+  		`to_location` BIGINT,
+  		`product_id` BIGINT,
+  		`qty` INT NULL,
+  	PRIMARY KEY (`movement_id`));
 
 # Join Database Tables
 
