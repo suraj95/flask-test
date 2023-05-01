@@ -1,6 +1,6 @@
 Babel==2.8.0
 click==7.1.2
-Flask==1.1.1
+Flask==2.3.2
 Flask-Babel==1.0.0
 Flask-MySQL==1.5.1
 Flask-SQLAlchemy==2.4.1
